@@ -119,3 +119,17 @@ body{
     color: #fff;
   }
   
+  .conteiner{
+    width: auto;
+    height: 30rem;
+    display: inline-flex;
+
+  }
+
+  .setaEsquerda{
+    background: linear-gradient(90deg,rgb(0, 0, 0,10) 0%, rgb(0, 0, 0,2) 65%,rgb(0, 0, 0,5) 70%, rgb(0, 0, 0,0) 100%);
+  }
+
+  .imagemSeta{
+    margin-top: 12rem;
+  }
