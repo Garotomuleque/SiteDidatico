@@ -1,135 +1,190 @@
-header{
-    background: linear-gradient(90deg,rgb(77,2,156) 0%, rgb(61,1,125) 65%, rgb(92,2,188) 100%);
-    width: auto;
-    height: 5rem;
-    margin:0%;
-    padding: 0%;
-    display:flex;
-    align-items: center;
-    
+header {
+  background: linear-gradient(90deg, rgb(77, 2, 156) 0%, rgb(61, 1, 125) 65%, rgb(92, 2, 188) 100%);
+  width: auto;
+  height: 5rem;
+  margin: 0%;
+  padding: 0%;
+  display: flex;
+  align-items: center;
 }
 
-body{
-	margin: 0;
-	padding: 0;
-    background-color: rgb(74, 28, 122);
-    color: whitesmoke;
-    height:100%;
-    font-family: "Montserrat", sans-serif;
-	background-repeat: no-repeat;
-	background-size:cover;
-    background-attachment: fixed;
+body {
+  margin: 0;
+  padding: 0;
+  background-color: rgb(74, 28, 122);
+  color: whitesmoke;
+  height: 100%;
+  font-family: "Montserrat", sans-serif;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 .btn {
-    --border-color: linear-gradient(-45deg, #ffae00, #7e03aa, #00fffb);
-    --border-width: 0.125em;
-    --curve-size: 0.5em;
-    --blur: 30px;
-    --bg: #080312;
-    --color: #afffff;
-    color: var(--color);
-    cursor: pointer;
-    /* use position: relative; so that BG is only for .btn */
-    position: relative;
-    isolation: isolate;
-    display: inline-grid;
-    place-content: center;
-    padding: 0.5em 1.5em;
-    font-size: 17px;
-    border: 0;
-    text-transform: uppercase;
-    box-shadow: 10px 10px 20px rgba(128, 47, 204, 0.6);
-    clip-path: polygon(
-      /* Top-left */ 0% var(--curve-size),
-      var(--curve-size) 0,
-      /* top-right */ 100% 0,
-      100% calc(100% - var(--curve-size)),
-      /* bottom-right 1 */ calc(100% - var(--curve-size)) 100%,
-      /* bottom-right 2 */ 0 100%
-    );
-    transition: color 250ms;
-  }
-  
-  .btn::after,
-  .btn::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-  }
-  
-  .btn::before {
-    background: var(--border-color);
-    background-size: 300% 300%;
-    animation: move-bg7234 5s ease infinite;
-    z-index: -2;
-  }
-  
-  @keyframes move-bg7234 {
-    0% {
+  --border-color: linear-gradient(-45deg, #ffae00, #7e03aa, #00fffb);
+  --border-width: 0.125em;
+  --curve-size: 0.5em;
+  --blur: 30px;
+  --bg: #080312;
+  --color: #afffff;
+  color: var(--color);
+  cursor: pointer;
+  position: relative;
+  isolation: isolate;
+  display: inline-grid;
+  place-content: center;
+  padding: 0.5em 1.5em;
+  font-size: 17px;
+  border: 0;
+  text-transform: uppercase;
+  box-shadow: 10px 10px 20px rgba(128, 47, 204, 0.6);
+  clip-path: polygon(
+    0% var(--curve-size),
+    var(--curve-size) 0,
+    100% 0,
+    100% calc(100% - var(--curve-size)),
+    calc(100% - var(--curve-size)) 100%,
+    0 100%
+  );
+  transition: color 250ms;
+}
+
+.btn::after,
+.btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+
+.btn::before {
+  background: var(--border-color);
+  background-size: 300% 300%;
+  animation: move-bg7234 5s ease infinite;
+  z-index: -2;
+}
+
+@keyframes move-bg7234 {
+  0% {
       background-position: 31% 0%;
-    }
-  
-    50% {
+  }
+  50% {
       background-position: 70% 100%;
-    }
-  
-    100% {
+  }
+  100% {
       background-position: 31% 0%;
-    }
   }
-  
-  .btn::after {
-    background: var(--bg);
-    z-index: -1;
-    clip-path: polygon(
-      /* Top-left */ var(--border-width)
-        calc(var(--curve-size) + var(--border-width) * 0.5),
-      calc(var(--curve-size) + var(--border-width) * 0.5) var(--border-width),
-      /* top-right */ calc(100% - var(--border-width)) var(--border-width),
-      calc(100% - var(--border-width))
-        calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5)),
-      /* bottom-right 1 */
-        calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5))
-        calc(100% - var(--border-width)),
-      /* bottom-right 2 */ var(--border-width) calc(100% - var(--border-width))
-    );
-    transition: clip-path 500ms;
-  }
-  
-  .btn:where(:hover, :focus)::after {
-    clip-path: polygon(
-      /* Top-left */ calc(100% - var(--border-width))
-        calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5)),
-      calc(100% - var(--border-width)) var(--border-width),
-      /* top-right */ calc(100% - var(--border-width)) var(--border-width),
-      calc(100% - var(--border-width))
-        calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5)),
-      /* bottom-right 1 */
-        calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5))
-        calc(100% - var(--border-width)),
-      /* bottom-right 2 */
-        calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5))
-        calc(100% - var(--border-width))
-    );
-    transition: 200ms;
-  }
-  
-  .btn:where(:hover, :focus) {
-    color: #fff;
-  }
-  
-  .conteiner{
-    width: auto;
-    height: 30rem;
-    display: inline-flex;
+}
 
-  }
+.btn::after {
+  background: var(--bg);
+  z-index: -1;
+  clip-path: polygon(
+    var(--border-width) calc(var(--curve-size) + var(--border-width) * 0.5),
+    calc(var(--curve-size) + var(--border-width) * 0.5) var(--border-width),
+    calc(100% - var(--border-width)) var(--border-width),
+    calc(100% - var(--border-width)) calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5)),
+    calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5)) calc(100% - var(--border-width)),
+    var(--border-width) calc(100% - var(--border-width))
+  );
+  transition: clip-path 500ms;
+}
 
-  .setaEsquerda{
-    background: linear-gradient(90deg,rgb(0, 0, 0,10) 0%, rgb(0, 0, 0,2) 65%,rgb(0, 0, 0,5) 70%, rgb(0, 0, 0,0) 100%);
-  }
+.btn:where(:hover, :focus)::after {
+  clip-path: polygon(
+    calc(100% - var(--border-width)) calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5)),
+    calc(100% - var(--border-width)) var(--border-width),
+    calc(100% - var(--border-width)) var(--border-width),
+    calc(100% - var(--border-width)) calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5)),
+    calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5)) calc(100% - var(--border-width)),
+    calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5)) calc(100% - var(--border-width))
+  );
+  transition: 200ms;
+}
 
-  .imagemSeta{
-    margin-top: 12rem;
-  }
+.btn:where(:hover, :focus) {
+  color: #fff;
+}
+
+.conteiner {
+  width: 100vw;
+  height: 100vh; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  visibility: hidden;
+}
+
+.botoes {
+  margin-left: auto;
+}
+
+.login {
+  width: 650px;
+  height: 500px;
+  background-color: rgb(106, 58, 156);
+  border-radius: 10%;
+  display: flex;
+  flex-direction: column; 
+  
+  padding: 20px; 
+
+}
+
+
+
+
+.button {
+  --color: #bd2bb1;
+  padding: 0.8em 1.7em;
+  background-color: transparent;
+  border-radius: .3em;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: .5s;
+  font-weight: 400;
+  font-size: 17px;
+  border: 1px solid;
+  font-family: inherit;
+  text-transform: uppercase;
+  color: var(--color);
+  z-index: 1;
+ }
+ 
+ .button::before, .button::after {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 50px;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  border-radius: 50%;
+  z-index: -1;
+  background-color: var(--color);
+  transition: 1s ease;
+ }
+ 
+ .button::before {
+  top: -1em;
+  left: -1em;
+ }
+ 
+ .button::after {
+  left: calc(100% + 1em);
+  top: calc(100% + 1em);
+ }
+ 
+ .button:hover::before, .button:hover::after {
+  height: 410px;
+  width: 410px;
+ }
+ 
+ .button:hover {
+  color: rgb(113, 25, 121);
+ }
+ 
+ .button:active {
+  filter: brightness(.8);
+ }
+ 

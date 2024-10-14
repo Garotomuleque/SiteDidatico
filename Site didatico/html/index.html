@@ -7,22 +7,30 @@
 </head>
 <body>
     <header>
-        <div class="btn">Login</div>
-        <div class="btn">Registrar-se</div>
-
+        <img src="../assets/Icone.png" height="80%" id="Icone">
+        <div class="botoes">
+            <div class="btn" id="Login">Login</div>
+            <div class="btn">Registrar-se</div>
+        </div>
     </header>
 
-    <div class="conteiner">
-        <div class="setaEsquerda">
-            <img src="../assets/seta.png" class="imagemSeta">
-        </div>
-        <div class="imagens">
+    <div class="conteiner" id="conteiner">
+        <div class="login">
+            <h2><u>Login</u></h2>
+            
+            <label for="Usuario">Usuário:</label>
+            <input type="text" name="Usuario" id="Usuario">
+           <label for="senha">Senha:</label>
+           <input type="password" name="senha" id="senha">
+           <label for="confirmarSenha">Confirmar Seha:</label>
+           <input type="password" id="confirmarSenha" name="confirmarSenha">
+           <div class="BotaoLogin">
 
-        </div>
-
-        <div class="setaDireita">
-
+           <div class="button">Login</div>
+             
         </div>
     </div>
+
+    <script src="../js/index.js"></script>
 </body>
 </html>
